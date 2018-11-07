@@ -4,7 +4,7 @@
 
 [User Manual]:https://www.roboteq.com/index.php/docman/motor-controllers-documents-and-files/documentation/user-manual/272-roboteq-controllers-user-manual-v17/file
 [MicroBasic]:https://www.roboteq.com/index.php/technology-menu/microbasic-technology
-[API Manual]:https://www.roboteq.com/index.php/docman/motor-controllers-documents-and-files/nxtgen-downloads-1/application-programming-interface/348-roboteq-linux-winapi-manual/file
+[C API]:https://www.roboteq.com/index.php/docman/motor-controllers-documents-and-files/nxtgen-downloads-1/application-programming-interface/348-roboteq-linux-winapi-manual/file
 
 <!-- Application Notes -->
 
@@ -19,7 +19,7 @@
 
 [ROS Driver]:https://github.com/g/roboteq
 
-<!-- For emails, prodcuct pages shouls be the default link for product names -->
+<!-- For emails, prodcuct pages should be the default link for product names -->
 <!-- Single Channel Induction -->
 
 [FIM2360S]:https://www.roboteq.com/index.php/component/virtuemart/388/8/motor-controllers/fim2360s-detail?Itemid=0
