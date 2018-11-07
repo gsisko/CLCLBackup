@@ -10,21 +10,15 @@ If Roborun+, RoboMag, or any other RoboteQ control application for the PC can't 
 
 ![](assets/markdown-img-paste-2018110711310615.png "Control unit or Power Unit configuration files are missing")
 
-Our PC control utilities throw these errors because they cannot match a configuration menu tree to the device they are connecting to. When our utilites connect to a RoboteQ device, they query the model number and family using the `?TRN` runtime query. For instance, here is the startup log from an [MDC2460]:
+## Steps to Fix
 
-```
-# C
-?trn
-TRN=MDC2XXX:MDC2460
-?FID
-FID=Roboteq v2.0 MDC2XXX 10/03/2018
-# C
-#
-```
 
-In this instance Roborun+ will use the response from `?TRN` to locate a configuration menu tree file. For the above example, Roborun+ will try to locate `MDC2460.xml` for the Control Unit configuration file and  `RCB2XXX.xml` for the  The RoboteQ control utility will look in the `Trees` folder of its install directory. For Roborun+, this should be `C:\Program Files (x86)\Roboteq\Roborun Plus\Trees` by default.
+* Make sure you are on the most recent release of the RoboteQ control utility you are using. You can find the most recent utility on our [Files Download] page.
+* Check that the corresponding controller configuration file is in your Trees directory (C:\Program Files (x86)\Roboteq\Roborun Plus\Trees for Roborun+).
+* If the problem persists please contact [techsupport@roboteq.com](mailto:techsupport@roboteq.com).
 
-If you are receiving this error, the RoboteQ cannot find the files in the trees folder. You should check to see if they are there manually, and make sure their names match the output of `?TRN`. If they are missing, please ensure that you have the [latest version][Files Download] of the application you are using. If you have the latest version and are still missing the correct tree files, or cannot upgrade to the latest version of the Utility, please send an email to [techsupport@roboteq.com](mailto:techsupport@roboteq.com).
+Please note, that if you are using a beta version of firmware, the most recent release of the control utility may still be incompatible. Please email [techsupport@roboteq.com](mailto:techsupport@roboteq.com) for help upgrading it.
+
 
 <!--START Email Footer -->
 
