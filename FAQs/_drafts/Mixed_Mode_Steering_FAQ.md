@@ -7,7 +7,7 @@ date: "2018-10-26 16:04"
 
 ## Using Mixed Mode
 
-When a single axis controls the steering of a differential drive, it is called mixed steering. We provide a mixed steering feature directly on our motor controllers called Mixed Mode. Mixed mode uses the channel 1 motor command as a throttle command, and the channel 2 motor command as a steering command. In mixed mode, the controller will automatically combine, or mix, the throttle and the steering commands and calculate what output should be submitted to each channel’s control loop. There are three separate versions of Mixed Mode you can choose from on RoboteQ controllers, and each of them mix the steering command and the throttle command into an output for each channel differently. Please reference Table 7-1 from our [User Manual][User Manual], which displays the motor output that is produced by different throttle and steering combinations in each of the mixing modes:
+When a single axis controls the steering of a differential drive, it is called mixed steering. We provide a mixed steering feature directly on our motor controllers called Mixed Mode. Mixed mode uses the channel 1 motor command as a throttle command, and the channel 2 motor command as a steering command. In mixed mode, the controller will automatically combine, or mix, the throttle and the steering commands and calculate what output should be submitted to each channel’s control loop. There are three separate versions of Mixed Mode you can choose from on RoboteQ controllers, and each of them mix the steering command and the throttle command into an output for each channel differently. Please reference Table 7-1 from our [User Manual], which displays the motor output that is produced by different throttle and steering combinations in each of the mixing modes:
 
 |  Input   |          | Mode 1 |       | Mode 2 |       | Mode 3 |       |
 |----------|----------|--------|-------|--------|-------|--------|-------|
@@ -84,7 +84,8 @@ $$\omega (R-\frac {l}{2}) = v_r$$
 
 
 <!-- FAQ Reference List -->
-[User Manual]: https://www.roboteq.com/index.php/docman/motor-controllers-documents-and-files/documentation/user-manual/272-roboteq-controllers-user-manual-v17/file "User Manual"
+
+[User Manual]:https://www.roboteq.com/index.php/docman/motor-controllers-documents-and-files/documentation/user-manual/272-roboteq-controllers-user-manual-v17/file "User Manual"
 
 [Differential Drive Kinematics]: http://www8.cs.umu.se/kurser/5DV122/HT13/material/Hellstrom-ForwardKinematics.pdf
 
