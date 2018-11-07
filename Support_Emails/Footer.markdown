@@ -20,7 +20,7 @@
 
 [ROS Driver]:https://github.com/g/roboteq
 
-<!-- For emails, prodcuct pages should be the default link for product names -->
+<!-- For emails, product pages should be the default link for product names -->
 <!-- Single Channel Induction -->
 
 [FIM2360S]:https://www.roboteq.com/index.php/component/virtuemart/388/8/motor-controllers/fim2360s-detail?Itemid=0
