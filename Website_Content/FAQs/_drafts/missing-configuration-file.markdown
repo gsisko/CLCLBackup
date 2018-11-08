@@ -4,19 +4,22 @@ title: "Missing Configuration File"
 date: "2018-11-07 11:25"
 ---
 
-##Q: Control Unit or Power Unit Configuration Menu is Missing
+Q: Control Unit or Power Unit Configuration Menu is Missing
+----------------
 
 If Roborun+, RoboMag, or any other RoboteQ control application for the PC can't find a configuration or power menu, it should show an error window. Here is an example from Roborun+:
 
 ![](assets/markdown-img-paste-2018110711310615.png "Control unit or Power Unit configuration files are missing")
 
-##Steps to Fix the Error
+Steps to Fix the Error
+---------------
 
 * Make sure you are on the most recent release of the RoboteQ control utility you are using. You can find the most recent utility on our [Files Download] page.
 * Check that the corresponding controller configuration file is in your Trees directory (C:\Program Files (x86)\Roboteq\Roborun Plus\Trees for Roborun+).
 * If the problem persists please contact [techsupport@roboteq.com](mailto:techsupport@roboteq.com).
 
-##Have More questions?
+Have More questions?
+------------
 
 Please note, that if you are using a beta version of firmware, the most recent release of the control utility may still be incompatible. Please email [techsupport@roboteq.com](mailto:techsupport@roboteq.com) for help upgrading it.
 

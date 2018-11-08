@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>2018-11-08-using-run-tab-to-debug-data.markdown</title>
+    <style>.emoji {
+  max-width: 1em !important;
+}
+del {
+  text-decoration: none;
+  position: relative;
+}
+del::after {
+  border-bottom: 1px solid black;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+ul.contains-task-list li.task-list-item {
+  position: relative;
+  list-style-type: none;
+}
+ul.contains-task-list li.task-list-item input.task-list-item-checkbox {
+  position: absolute;
+  transform: translateX(-100%);
+  width: 30px;
+}
+span.critic.comment {
+  position: relative;
+}
+span.critic.comment::before {
+  content: '\1f4ac';
+  position: initial;
+}
+span.critic.comment > span {
+  display: none;
+}
+span.critic.comment:hover > span {
+  display: initial;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid;
+  border-radius: 5px;
+  max-height: 4em;
+  overflow: auto;
+}
+span.critic.comment:focus > span {
+  display: initial;
+  text-decoration: underline;
+  position: initial;
+  top: auto;
+  left: auto;
+  border: initial;
+  border-radius: initial;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+body {
+  overflow: initial !important;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  line-height: 1.6;
+  word-wrap: break-word;
+  padding: 30px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+}
+body > *:first-child {
+  margin-top: 0 !important;
+}
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+body .absent {
+  color: #c00;
+}
+body .anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+body .anchor:focus {
+  outline: none;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+body h1 .octicon-link,
+body h2 .octicon-link,
+body h3 .octicon-link,
+body h4 .octicon-link,
+body h5 .octicon-link,
+body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+body h1:hover .anchor,
+body h2:hover .anchor,
+body h3:hover .anchor,
+body h4:hover .anchor,
+body h5:hover .anchor,
+body h6:hover .anchor {
+  padding-left: 8px;
+  margin-left: -30px;
+  text-decoration: none;
+}
+body h1:hover .anchor .octicon-link,
+body h2:hover .anchor .octicon-link,
+body h3:hover .anchor .octicon-link,
+body h4:hover .anchor .octicon-link,
+body h5:hover .anchor .octicon-link,
+body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+body h1 tt,
+body h2 tt,
+body h3 tt,
+body h4 tt,
+body h5 tt,
+body h6 tt,
+body h1 code,
+body h2 code,
+body h3 code,
+body h4 code,
+body h5 code,
+body h6 code {
+  font-size: inherit;
+}
+body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+body h1 .anchor {
+  line-height: 1;
+}
+body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+body h2 .anchor {
+  line-height: 1;
+}
+body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+body h3 .anchor {
+  line-height: 1.2;
+}
+body h4 {
+  font-size: 1.25em;
+}
+body h4 .anchor {
+  line-height: 1.2;
+}
+body h5 {
+  font-size: 1em;
+}
+body h5 .anchor {
+  line-height: 1.1;
+}
+body h6 {
+  font-size: 1em;
+  color: #777;
+}
+body h6 .anchor {
+  line-height: 1.1;
+}
+body p,
+body blockquote,
+body ul,
+body ol,
+body dl,
+body table,
+body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+body ul,
+body ol {
+  padding-left: 2em;
+}
+body ul.no-list,
+body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+body ul ul,
+body ul ol,
+body ol ol,
+body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body li > p {
+  margin-top: 16px;
+}
+body dl {
+  padding: 0;
+}
+body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+body blockquote > :first-child {
+  margin-top: 0;
+}
+body blockquote > :last-child {
+  margin-bottom: 0;
+}
+body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+body table th {
+  font-weight: bold;
+}
+body table th,
+body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body .emoji {
+  max-width: none;
+}
+body span.frame {
+  display: block;
+  overflow: hidden;
+}
+body span.frame > span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+body span.frame span img {
+  display: block;
+  float: left;
+}
+body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #333;
+}
+body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+body span.align-center > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+body span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+body span.align-right > span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+body span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+body span.float-left span {
+  margin: 13px 0 0;
+}
+body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+body span.float-right > span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+body code,
+body tt {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+}
+body code:before,
+body tt:before,
+body code:after,
+body tt:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+body code br,
+body tt br {
+  display: none;
+}
+body del code {
+  text-decoration: inherit;
+}
+body pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+body .highlight {
+  margin-bottom: 16px;
+}
+body .highlight pre,
+body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+body pre {
+  word-wrap: normal;
+}
+body pre code,
+body pre tt {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+body pre code:before,
+body pre tt:before,
+body pre code:after,
+body pre tt:after {
+  content: normal;
+}
+body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+span.critic.comment > span {
+  background-color: #fff;
+}
+a {
+  color: #337ab7;
+}
+
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+.line-number.bracket-matcher.bracket-matcher {
+  color: #969896;
+  background-color: #dbdde0;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+@keyframes RotatingBackground {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
+
+.debugger-breakpoint-icon::before,
+.debugger-shadow-breakpoint-icon::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 130%;
+  width: 130%;
+  height: 130%;
+  content: "\f052";
+}
+.debugger-breakpoint-icon,
+.debugger-breakpoint-icon-disabled,
+.debugger-breakpoint-icon-unresolved,
+.debugger-breakpoint-icon-conditional,
+.debugger-shadow-breakpoint-icon {
+  text-align: center;
+  display: block;
+  width: 0.8em;
+  cursor: pointer;
+}
+.debugger-breakpoint-icon-nonconditional {
+  color: #6494ed;
+}
+.debugger-breakpoint-icon-conditional {
+  color: #e2c08d;
+}
+.debugger-breakpoint-icon-disabled {
+  position: relative;
+  top: -4px;
+  left: 2px;
+}
+.debugger-breakpoint-icon-disabled::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 78%;
+  width: 78%;
+  height: 78%;
+  content: "\f084";
+}
+.debugger-breakpoint-icon-unresolved {
+  position: relative;
+  top: -2px;
+}
+.debugger-breakpoint-icon-unresolved::before {
+  font-family: 'Octicons Regular';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  font-size: 80%;
+  width: 80%;
+  height: 80%;
+  content: "\f0e8";
+}
+.debugger-shadow-breakpoint-icon {
+  color: rgba(100, 148, 237, 0.4);
+}
+.debugger-current-line-highlight {
+  background: linear-gradient(to bottom, rgba(15, 130, 230, 0.8) 0%, rgba(15, 130, 230, 0.8) 5%, rgba(15, 130, 230, 0.3) 5%, rgba(15, 130, 230, 0.3) 95%, rgba(15, 130, 230, 0.8) 95%, rgba(15, 130, 230, 0.8) 100%);
+}
+
+.gutter[gutter-name=diagnostics-gutter] {
+  width: 0.7em;
+}
+.diagnostics-gutter-ui-item {
+  display: flex;
+}
+.diagnostics-gutter-ui-item .icon {
+  display: flex;
+  width: 0.7em;
+  height: 0.7em;
+  font-size: 0.7em;
+  align-self: center;
+}
+.diagnostics-gutter-ui-item .icon::before {
+  width: 1em;
+  height: 1em;
+  font-size: 1em;
+  margin: 0;
+  align-self: center;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-info,
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-review {
+  color: #6494ed;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-error {
+  color: #ff6347;
+}
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-action,
+.diagnostics-gutter-ui-item.diagnostics-gutter-ui-gutter-warning {
+  color: #e2c08d;
+}
+
+pre.editor-colors,pre.editor-colors {
+  background-color: #f1f1f1;
+  color: #000000;
+}
+pre.editor-colors .bracket-matcher .region,pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #000000;
+  box-sizing: border-box;
+  border-color: #000000;
+  background: #000000;
+  opacity: 0.15;
+}
+pre.editor-colors .wrap-guide,pre.editor-colors .wrap-guide {
+  background-color: #282a2e;
+}
+pre.editor-colors .indent-guide,pre.editor-colors .indent-guide {
+  color: #ccc;
+}
+pre.editor-colors .invisible-character,pre.editor-colors .invisible-character {
+  color: #373b41;
+}
+pre.editor-colors .gutter,pre.editor-colors .gutter {
+  background-color: #f1f1f1;
+  color: #969896;
+}
+pre.editor-colors .gutter .line-number.cursor-line,pre.editor-colors .gutter .line-number.cursor-line {
+  background-color: #dbdde0;
+  color: #969896;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  color: #969896;
+}
+pre.editor-colors .gutter .line-number.folded,pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,pre.editor-colors .fold-marker:after {
+  color: #969896;
+}
+pre.editor-colors .invisible,pre.editor-colors .invisible {
+  color: #000000;
+}
+pre.editor-colors .cursor,pre.editor-colors .cursor {
+  color: #000000;
+}
+pre.editor-colors .selection .region,pre.editor-colors .selection .region {
+  background-color: #dbdde0;
+}
+pre.editor-colors .search-results .syntax--marker .region,pre.editor-colors .search-results .syntax--marker .region {
+  background-color: #000000;
+  border: 1px solid #000000;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region,pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: 12px solid #373b41;
+}
+.syntax--comment {
+  color: #68906c;
+}
+.syntax--keyword {
+  color: #272ae2;
+}
+.syntax--keyword.syntax--operator {
+  color: #000000;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #272ae2;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #b97d2d;
+}
+.syntax--storage.syntax--type {
+  color: #0b99dd;
+}
+.syntax--constant {
+  color: #0b99dd;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #b97d2d;
+}
+.syntax--variable {
+  color: #000000;
+}
+.syntax--variable.syntax--interpolation {
+  color: #bf4040;
+}
+.syntax--variable.syntax--parameter.syntax--function {
+  color: #000000;
+}
+.syntax--invalid.syntax--illegal {
+  background-color: #cc6666;
+  color: #f1f1f1;
+}
+.syntax--string {
+  color: #68906c;
+}
+.syntax--string.syntax--regexp {
+  color: #0b99dd;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #b97d2d;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #cc6666;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #969896;
+}
+.syntax--punctuation.syntax--definition.syntax--string {
+  color: #68906c;
+}
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--variable,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #000000;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #272ae2;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #f0c674;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #775bbb;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #bf4040;
+}
+.syntax--support.syntax--class {
+  color: #f0c674;
+}
+.syntax--support.syntax--function {
+  color: #9e1313;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #272ae2;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #000000;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #f0c674;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #272ae2;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #cc6666;
+  text-decoration: none;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #272ae2;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #272ae2;
+}
+.syntax--meta.syntax--class {
+  color: #f0c674;
+}
+.syntax--meta.syntax--link {
+  color: #b97d2d;
+}
+.syntax--meta.syntax--require {
+  color: #272ae2;
+}
+.syntax--meta.syntax--selector {
+  color: #775bbb;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #000000;
+}
+.syntax--none {
+  color: #000000;
+}
+.syntax--markup.syntax--bold {
+  color: #b97d2d;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #775bbb;
+}
+.syntax--markup.syntax--deleted {
+  color: #cc6666;
+}
+.syntax--markup.syntax--italic {
+  color: #775bbb;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #272ae2;
+}
+.syntax--markup.syntax--inserted {
+  color: #68906c;
+}
+.syntax--markup.syntax--list {
+  color: #cc6666;
+}
+.syntax--markup.syntax--quote {
+  color: #68906c;
+}
+.syntax--markup.syntax--raw.syntax--inline {
+  color: #68906c;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--markup.syntax--heading {
+  color: #68906c;
+}
+pre.editor-colors[mini] .scroll-view,pre.editor-colors .scroll-view {
+  padding-left: 1px;
+}
+.syntax--js .syntax--storage {
+  color: #272ae2;
+}
+.syntax--js.syntax--support.syntax--class {
+  color: #e69e11;
+}
+.syntax--js.syntax--support.syntax--constant {
+  color: #9e1313;
+}
+
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+</style>
+
+  </head>
+  <body>
+    <h2 id="debugging-data-from-a-roboteq-device">Debugging Data from a RoboteQ Device</h2>
+<p>Often when using a RoboteQ motor controller or sensor, it is useful to be able to debug real time information about the values that the device is outputting or reading. This can help you figure out what is going wrong with an application, monitor performance, or even be used as field application tool for logging data from the motor controllers. The following application note walks you through debugging data from RoboteQ devices using our PC applications.</p>
+<h2 id="using-the-run-tab">Using the Run Tab</h2>
+<p>All of RoboteQs control utilities come with powerful tools to debug and log data from the devices operation. These tools can often be accessed from the run tab of the configuration utility. For example, here is the run tab from a Roborun+ instance connected to an MDC2460:</p>
+<p><img src="..\_posts\2018\assets\markdown-img-paste-Run-Tab-20181107141633438.png" title="Run Tab of Roborun+"></p>
+<p>From the run tab you can use the capture section to display multiple different kinds of <a href="#channel-value-reference">runtime values</a>. The values what we want to debug are selected by using the channel drop down menus. There are 8 channels in total.</p>
+<p>For instance, if we want to run a motor in open loop and check its current draw we should debug the Battery Volts, Motor Command, Motor Power, and Motor Amps:</p>
+<p><img src="..\_posts\2018\assets\markdown-img-paste-2018110715481613.png"></p>
+<p>As you can see the Capture section will report the current value, the maximum value, and the minimum value of the value selected for each channel. The minimum and maximum values can be cleared and set to the current value by clicking on the clear button.</p>
+<blockquote>
+<p><strong>Roborun+ 2.0 and newer:</strong><br>
+We can save the channel configuration using the run tab configuration menu. <img src="..\_posts\2018\assets\markdown-img-paste-2018110716193318.png"></p>
+</blockquote>
+<h2 id="recording-and-graphing-data">Recording and Graphing Data</h2>
+<p>We can do much more than just inspect the current value of each channel. By hitting the record button we can also log the past values of each channel. This log will display in the graph of the capture section. Here is a graph of a motor on channel one accelerating from 0% duty cycle to 100% duty cycle in open loop mode:</p>
+<p><img src="..\_posts\2018\assets\markdown-img-paste-20181107155911482.png"></p>
+<p>You can see that the motor command changes immediately and the motor ramps the supplied voltage to achieve the motor command (the acceleration in this example is quite low). Each value cahnge is logged in the graph section over time.</p>
+<h2 id="saving-a-data-log">Saving a Data Log</h2>
+<p>Our control applicaitons are capable for viewing data logs from the capture section channels. However, manipulating the logs and performing analysis on the log data is beyond the scope of our applciations. For this reason, we have included the ability to save a copy the data log to an external, tab delimitted text file. You can do this using the Save button in the capture section:</p>
+<p><img src="..\_posts\2018\assets\markdown-img-paste-20181107162441408.png"></p>
+<p>The chart will save as a tab delimited list in a text file. Here is an excerpt from the log generated by the Ramping motor from earlier:</p>
+<pre class="editor-colors lang-text"><span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">Time Stamp  Battery Volts   Motor Command 1 Motor Power 1   Motor Amps 1</span></span></span>
+<span class=""><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">[...]</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:56 PM    16  0   0   0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:56 PM    16  0   0   0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    16  0   0   0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    16.1    0   0   0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    16  0   0   0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    16  0   0   0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    16  39  39  0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    16  80  86  0</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    15.9    207 211 3.5</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    15.9    252 252 2.3</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    15.9    252 252 1.5</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:57 PM    16  264 267 1.4</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:58 PM    15.9    301 308 1.9</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:58 PM    15.9    331 331 2.3</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:58 PM    15.9    357 361 2.2</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:58 PM    15.9    383 387 2</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:58 PM    15.8    417 417 2.3</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:58 PM    15.8    447 447 2.6</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">11/7/2018 3:54:58 PM    15.8    488 488 2.8</span></span></span>
+<span><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text">[...]</span></span></span></pre>
+<p>A time stamp for each value is given to document when the sample was taken for each channel value.</p>
+<h2 id="appendix-a-channel-value-reference">Appendix A: Channel Value Reference</h2>
+<table>
+<colgroup>
+<col style="width: 19%">
+<col style="width: 56%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capture Section Value</th>
+<th>Description</th>
+<th>Corresponding Runtime Query</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Battery Volts</td>
+<td>Voltage Available On VMOT</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?V 2</code></td>
+</tr>
+<tr class="even">
+<td>Motor Command (1,2)</td>
+<td>-1000 to 1000 value command to motor channel output</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?M (1,2)</code></td>
+</tr>
+<tr class="odd">
+<td>Motor Power (1,2)</td>
+<td>PWM duty cycle of motor channel output</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?P (1,2)</code></td>
+</tr>
+<tr class="even">
+<td>Motor Amps (1,2)</td>
+<td>Peak Current draw on motor channel output</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?A (1,2)</code></td>
+</tr>
+<tr class="odd">
+<td>Battery Amps</td>
+<td>Current draw from Powersource over VMOT</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?BA</code></td>
+</tr>
+<tr class="even">
+<td>Speed (1,2) %</td>
+<td>Encoder measured Speed as a percentage of the Maximum Speed</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?SR (1,2)</code></td>
+</tr>
+<tr class="odd">
+<td>Speed (1,2) RPM</td>
+<td>Encoder measured Speed as an RPM value</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?S (1,2)</code></td>
+</tr>
+<tr class="even">
+<td>Counter (1,2)</td>
+<td>Internal Encoder Counter value</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?C (1,2)</code></td>
+</tr>
+<tr class="odd">
+<td>Feedback (1,2)</td>
+<td>Position Feedback Signal value for Closed Loop Mode</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?F (1,2)</code></td>
+</tr>
+<tr class="even">
+<td>Loop Error (1,2)</td>
+<td>Control Loop Error in Closed Loop Mode</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?E (1,2)</code></td>
+</tr>
+<tr class="odd">
+<td>Track (1,2)</td>
+<td>Expected value of motor position in Closed Loop Position Modes</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?TR (1,2)</code></td>
+</tr>
+<tr class="even">
+<td>5V Output</td>
+<td>Current voltage on the 5V output rail</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?V 3</code></td>
+</tr>
+<tr class="odd">
+<td>Controller Volts</td>
+<td>Internal Logic Stage Voltage</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?V 2</code></td>
+</tr>
+<tr class="even">
+<td>MCU Temp</td>
+<td>MCU Temperature (in Celsius)</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?T 1</code></td>
+</tr>
+<tr class="odd">
+<td>Heatsink Temp (1,2)</td>
+<td>Temperature from Motor Channel output FETs (in Celsius)</td>
+<td><code style="font-family: Menlo, Consolas, &quot;DejaVu Sans Mono&quot;, monospace;">?T (1,2)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="further-questions">Further questions:</h2>
+<p>Detailed Documenation for the Run Tab in Roborun+ specifically is given in <strong>SECTION 20: Using the Roborun Configuration Utility</strong> of our <a href="https://www.roboteq.com/index.php/docman/motor-controllers-documents-and-files/documentation/user-manual/272-roboteq-controllers-user-manual-v17/file">User Manual</a>. If you have any further questions, suggestions for changes to this article, or any requests for new logging features, please send an email to <a href="mailto:techsupport@roboteq.com">techsupport@roboteq.com</a>.</p>
+<!--START Email Footer -->
+<!-- Reference Links -->
+<!-- Application Notes -->
+<!-- FAQs -->
+<!-- 3rd Party Links -->
+<!-- For emails, product pages should be the default link for product names -->
+<!-- Single Channel Induction -->
+<!-- Single Channel Brushless -->
+<!-- Brushless -->
+<!-- Single Channel Brushed -->
+<!-- Brushed -->
+<!-- MagSensors -->
+<!-- END Email Footer -->
+
+  </body>
+</html>
