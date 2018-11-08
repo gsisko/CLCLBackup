@@ -5,11 +5,13 @@ date: '2018-11-08 14:25'
 Author: Gabriel Isko
 ---
 
-##Q: My device's configuration settings are not being saved after a power cycle or Reboot
+Q: My device's configuration settings are not being saved after a power cycle or Reboot
+-------------------
 
 Configuration settings must be saved to flash manually when they are changed.
 
-##Steps to Save configuration settings to Flash Memory
+Steps to Save configuration settings to Flash Memory
+-----------
 
 * If you are editing your configuration settings from the Run Tab of Roborun+, please make sure you save your settings to the controller:
 
@@ -21,7 +23,8 @@ Configuration settings must be saved to flash manually when they are changed.
 setcommand(_EES, 1 )
 ```
 
-##Further Questions
+Further Questions
+----------
 
 Please reference the `!EES` documentation in **SECTION 19: Command Reference** of our [User Manual]. If you still have questions please email [techsupport@roboteq.com](mailto:techsupport@roboteq.com).
 
