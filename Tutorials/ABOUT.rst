@@ -8,16 +8,17 @@ enough detail to answer any questions that a customer could have using
 our products.
 
 Tutorials are **NOT** designed to answer common questions. to answer a
-common question, use a [FAQ]
+common question, use a FAQ_
 
 Tutorials are **NOT** designed to provide support for non RoboteQ
 exclusive applicaitons. For non specific RoboteQ applicaionts, use an
-[Application Note]
+Application Note_
 
 Format
 ======
 
 **WIP**
 
-[FAQ]:../FAQs/README.md [Application Note]:
-../Application\_Notes/README.md
+.. _FAQ: ../FAQs/README.rst
+
+.. _Application Note: ../Application\_Notes/README.md
