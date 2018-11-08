@@ -1,7 +1,7 @@
 ---
-layout: "FAQ"
-title: "Configuration Settings are Resetting on Power Up"
-date: "2018-11-08 11:02"
+layout: FAQ
+title: Configuration Settings are Resetting on Power Up
+date: '2018-11-08 14:25'
 Author: Gabriel Isko
 ---
 
