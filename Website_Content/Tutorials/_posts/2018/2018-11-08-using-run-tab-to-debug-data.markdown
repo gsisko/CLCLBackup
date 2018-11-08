@@ -7,12 +7,12 @@ date: '2018-11-08 14:39'
 Debugging Data from a RoboteQ Device
 ---------------
 
-Often when using a RoboteQ motor controller or sensor, it is useful to be able to debug real time information about the values that the device is outputting or reading. This can help you figure out what is going wrong with an application, monitor performance, or even be used as field application tool for logging data from the motor controllers. The following application note walks you through debugging data from RoboteQ devices using our PC applications.
+Often when using a RoboteQ motor controller, it is useful to be able to debug real time information about the values that the device is outputting or reading. This can help you figure out what is going wrong with an application, monitor performance, or even be used as field application tool for logging data from the motor controllers. The following tutorial walks you through debugging data from RoboteQ devices using Roborun+.
 
-Using the Run Tab
+Using the Run Tab in Roborun+
 -------------
 
-All of RoboteQs control utilities come with powerful tools to debug and log data from the devices operation. These tools can often be accessed from the run tab of the configuration utility. For example, here is the run tab from a Roborun+ instance connected to an MDC2460:
+Roborun+ comes with powerful tools to debug and log data from the device's operation. These tools can be accessed from the run tab of the configuration utility. For example, here is the run tab from a Roborun+ instance connected to an [MDC2460]:
 
 ![](assets/markdown-img-paste-Run-Tab-20181107141633438.png "Run Tab of Roborun+")
 
@@ -26,7 +26,8 @@ As you can see the Capture section will report the current value, the maximum va
 
 > **Roborun+ 2.0 and newer:**  
 > We can save the channel configuration using the run tab configuration menu.
-> ![](assets/markdown-img-paste-2018110716193318.png)
+>
+> ![](assets/markdown-img-paste-20181108154850877.png)
 
 
 Recording and Graphing Data
@@ -36,12 +37,12 @@ We can do much more than just inspect the current value of each channel. By hitt
 
 ![](assets/markdown-img-paste-20181107155911482.png)
 
-You can see that the motor command changes immediately and the motor ramps the supplied voltage to achieve the motor command (the acceleration in this example is quite low). Each value cahnge is logged in the graph section over time.
+You can see that the motor command changes immediately and the motor ramps the supplied voltage to achieve the motor command (the acceleration in this example is quite low). Each value change is logged in the graph section over time.
 
 Saving a Data Log
 ---------------------
 
-Our control applicaitons are capable for viewing data logs from the capture section channels. However, manipulating the logs and performing analysis on the log data is beyond the scope of our applciations. For this reason, we have included the ability to save a copy the data log to an external, tab delimitted text file. You can do this using the Save button in the capture section:
+Roborun+ is capable for viewing data logs from the capture section channels. However, manipulating the logs and performing analysis on the log data is beyond the scope of our Roborun+. For this reason, we have included the ability to save a copy the data log to an external, tab delimitted text file. You can do this using the Save button in the capture section:
 
 ![](assets/markdown-img-paste-20181107162441408.png)
 
