@@ -10,7 +10,12 @@ By default, our controllers will control a [differential drive](https://en.wikip
 #Steps to Configure mixed Mode Steering
 
 * Make sure that you have Mixed Mode steering set in General Drop down menu of the Power Output section in the Configuration tab of Roborun+:
+![](assets/markdown-img-paste-20181108094121295.png)
+
 * Make sure you remember to Save the configuration to the controller:
+
+![](assets/markdown-img-paste-20181108094223488.png)
+
 
 #Have More questions?
 Please reference **SECTION 7: Motor Operating Features and Options** of our [User Manual]
