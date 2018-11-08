@@ -1,14 +1,16 @@
 ---
-layout: "Application Note"
-title: "Using Run Tab to Debug Data"
-date: "2018-11-07 13:56"
+layout: Application Note
+title: Using Run Tab to Debug Data
+date: '2018-11-08 14:39'
 ---
 
-#Debugging Data from a RoboteQ Device
+Debugging Data from a RoboteQ Device
+---------------
 
 Often when using a RoboteQ motor controller or sensor, it is useful to be able to debug real time information about the values that the device is outputting or reading. This can help you figure out what is going wrong with an application, monitor performance, or even be used as field application tool for logging data from the motor controllers. The following application note walks you through debugging data from RoboteQ devices using our PC applications.
 
-##Using the Run Tab
+Using the Run Tab
+-------------
 
 All of RoboteQs control utilities come with powerful tools to debug and log data from the devices operation. These tools can often be accessed from the run tab of the configuration utility. For example, here is the run tab from a Roborun+ instance connected to an MDC2460:
 
@@ -27,7 +29,8 @@ As you can see the Capture section will report the current value, the maximum va
 > ![](assets/markdown-img-paste-2018110716193318.png)
 
 
-##Recording and Graphing Data
+Recording and Graphing Data
+----------------------
 
 We can do much more than just inspect the current value of each channel. By hitting the record button we can also log the past values of each channel. This log will display in the graph of the capture section. Here is a graph of a motor on channel one accelerating from 0% duty cycle to 100% duty cycle in open loop mode:
 
@@ -35,7 +38,8 @@ We can do much more than just inspect the current value of each channel. By hitt
 
 You can see that the motor command changes immediately and the motor ramps the supplied voltage to achieve the motor command (the acceleration in this example is quite low). Each value cahnge is logged in the graph section over time.
 
-##Saving a Data Log
+Saving a Data Log
+---------------------
 
 Our control applicaitons are capable for viewing data logs from the capture section channels. However, manipulating the logs and performing analysis on the log data is beyond the scope of our applciations. For this reason, we have included the ability to save a copy the data log to an external, tab delimitted text file. You can do this using the Save button in the capture section:
 
@@ -71,7 +75,8 @@ Time Stamp	Battery Volts	Motor Command 1	Motor Power 1	Motor Amps 1
 A time stamp for each value is given to document when the sample was taken for each channel value.
 
 
-###Appendix A: Channel Value Reference
+Appendix A: Channel Value Reference
+----------------------
 
 | Capture Section Value | Description                                                    | Corresponding Runtime Query |
 | --------------------- | -------------------------------------------------------------- | --------------------------- |
@@ -91,7 +96,8 @@ A time stamp for each value is given to document when the sample was taken for e
 | MCU Temp              | MCU Temperature (in Celsius)                                   | `?T 1`                      |
 | Heatsink Temp (1,2)   | Temperature from Motor Channel output FETs (in Celsius)        | `?T (1,2)`                  |
 
-###Further questions:
+Further questions:
+---------------------
 
 Detailed Documenation for the Run Tab in Roborun+ specifically is given in **SECTION 20: Using the Roborun Configuration Utility** of our [User Manual]. If you have any further questions, suggestions for changes to this article, or any requests for new logging features, please send an email to [techsupport@roboteq.com](mailto:techsupport@roboteq.com).
 
