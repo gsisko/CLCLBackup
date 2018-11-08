@@ -7,6 +7,10 @@ FAQs exist as quick answers for frequently asked questions. They should be quick
 
 FAQs are **NOT** meant to document a general feature of RoboteQ products. To Document a general feature of RoboteQ products, use a Tutorial_
 
+Format
+=============
+
+
 
 .. Links
 .. _Tutorial: ../Tutorials/Tutorial_ABOUT.rst
