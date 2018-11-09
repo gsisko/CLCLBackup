@@ -4,12 +4,12 @@ title: "Mixed Mode FAQ"
 date: "2018-10-26 16:04"
 ---
 
-Q: How do I used mixed steering mode on my motor controller?
+Q: How Do I Used Mixed Steering Mode On My Motor Controller?
 ------------
 
 By default, our controllers will control a [differential drive](https://en.wikipedia.org/wiki/Differential_wheeled_robot) in tank mode. Using Mixed mode steering, you can control both the speed and the steering with a single joystick.
 
-Steps to Configure mixed Mode Steering
+Steps To Configure Mixed Mode Steering
 --------------
 
 * Make sure that you have Mixed Mode steering set in General Drop down menu of the Power Output section in the Configuration tab of Roborun+:
