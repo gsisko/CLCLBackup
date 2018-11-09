@@ -14,11 +14,7 @@ Steps To Configure Mixed Mode Steering
 
 * Make sure that you have Mixed Mode steering set in General Drop down menu of the Power Output section in the Configuration tab of Roborun+:
 
-![](assets/markdown-img-paste-20181108094121295.png)
-
-* Make sure you remember to Save the configuration to the controller:
-
-![](assets/markdown-img-paste-20181108094223488.png)
+![](assets/markdown-img-paste-20181109140239539.png)
 
 
 Have More questions?
