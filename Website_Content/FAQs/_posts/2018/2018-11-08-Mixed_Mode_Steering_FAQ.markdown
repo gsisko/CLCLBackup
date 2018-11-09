@@ -4,7 +4,7 @@ title: "Mixed Mode FAQ"
 date: "2018-10-26 16:04"
 ---
 
-Q: How do I steer with a single joystick on a dual motor controller?
+Q: How do I used mixed steering mode on my motor controller?
 ------------
 
 By default, our controllers will control a [differential drive](https://en.wikipedia.org/wiki/Differential_wheeled_robot) in tank mode. Using Mixed mode steering, you can control both the speed and the steering with a single joystick.
