@@ -1,7 +1,7 @@
 ---
-layout: "FAQ"
-title: "Missing Configuration File"
-date: "2018-11-07 11:25"
+layout: FAQ
+title: Missing Configuration File
+date: '2018-11-13 13:41'
 ---
 
 Q: Control Unit or Power Unit Configuration Menu is Missing
