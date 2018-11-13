@@ -9,7 +9,7 @@ Q: Control Unit or Power Unit Configuration Menu is Missing
 
 If Roborun+, RoboMag, or any other RoboteQ control application for the PC can't find a configuration or power menu, it should show an error window. Here is an example from Roborun+:
 
-![](assets/markdown-img-paste-2018110711310615.png "Control unit or Power Unit configuration files are missing")
+![](assets/markdown-img-paste-20181113133830823.png)
 
 Steps to Fix the Error
 ---------------
