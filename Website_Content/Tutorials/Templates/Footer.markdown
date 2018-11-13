@@ -1,32 +1,4 @@
----
-layout: "FAQ"
-title: "Missing Configuration File"
-date: "2018-11-07 11:25"
----
-
-#Q: Control Unit or Power Unit Configuration Menu is Missing
-
-If Roborun+, RoboMag, or any other RoboteQ control application for the PC can't find a configuration or power menu, it should show an error window. Here is an example from Roborun+:
-
-![](assets/markdown-img-paste-2018110711310615.png "Control unit or Power Unit configuration files are missing")
-
-Our PC control utilities throw these errors because they cannot match a configuration menu tree to the device they are connecting to. When our utilites connect to a RoboteQ device, they query the model number and family using the `?TRN` runtime query. For instance, here is the startup log from an [MDC2460]:
-
-```
-# C
-?trn
-TRN=MDC2XXX:MDC2460
-?FID
-FID=Roboteq v2.0 MDC2XXX 10/03/2018
-# C
-#
-```
-
-In this instance Roborun+ will use the response from `?TRN` to locate a configuration menu tree file. For the above example, Roborun+ will try to locate `MDC2460.xml` for the Control Unit configuration file and  `RCB2XXX.xml` for the  The RoboteQ control utility will look in the `Trees` folder of its install directory. For Roborun+, this should be `C:\Program Files (x86)\Roboteq\Roborun Plus\Trees` by default.
-
-If you are receiving this error, the RoboteQ cannot find the files in the trees folder. You should check to see if they are there manually, and make sure their names match the output of `?TRN`. If they are missing, please ensure that you have the [latest version][Files Download] of the application you are using. If you have the latest version and are still missing the correct tree files, or cannot upgrade to the latest version of the Utility, please send an email to [techsupport@roboteq.com](mailto:techsupport@roboteq.com).
-
-<!--START Email Footer -->
+<!--START Tutorial Footer -->
 
 <!-- Reference Links -->
 
@@ -48,7 +20,7 @@ If you are receiving this error, the RoboteQ cannot find the files in the trees 
 
 [ROS Driver]:https://github.com/g/roboteq
 
-<!-- For emails, prodcuct pages should be the default link for product names -->
+<!-- For emails, product pages should be the default link for product names -->
 <!-- Single Channel Induction -->
 
 [FIM2360S]:https://www.roboteq.com/index.php/component/virtuemart/388/8/motor-controllers/fim2360s-detail?Itemid=0
@@ -76,4 +48,4 @@ If you are receiving this error, the RoboteQ cannot find the files in the trees 
 [MGS1600GY]:https://www.roboteq.com/index.php/roboteq-products-and-services/magnetic-guide-sensors/320/mgs1600cgy-magnetic-sensor-with-gyroscope-detail
 
 
-<!-- END Email Footer -->
+<!-- END Tutorial Footer -->
