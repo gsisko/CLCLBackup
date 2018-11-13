@@ -5,12 +5,12 @@ date: '2018-11-08 14:25'
 Author: Gabriel Isko
 ---
 
-Q: My device's configuration settings are not being saved after a power cycle or Reboot
+Q: My device's configuration settings are not being saved after a power cycle or Reboot when configuring from USB/RS232 Configuration commands.
 -------------------
 
-Configuration settings must be saved to flash manually when they are changed.
+Configuration settings must be saved to flash manually when they are changed via Serial or USB Configuration Commands.
 
-Steps to Save configuration settings to Flash Memory
+Steps to Save Configuration Settings to Flash Memory
 -----------
 
 * If you are editing your configuration settings from the Run Tab of Roborun+, please make sure you save your settings to the controller:

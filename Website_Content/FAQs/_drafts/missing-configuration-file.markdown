@@ -16,12 +16,11 @@ Steps to Fix the Error
 
 * Make sure you are on the most recent release of the RoboteQ control utility you are using. You can find the most recent utility on our [Files Download] page.
 * Check that the corresponding controller configuration file is in your Trees directory (C:\Program Files (x86)\Roboteq\Roborun Plus\Trees for Roborun+).
-* If the problem persists please contact [techsupport@roboteq.com](mailto:techsupport@roboteq.com).
 
 Have More questions?
 ------------
 
-Please note, that if you are using a beta version of firmware, the most recent release of the control utility may still be incompatible. Please email [techsupport@roboteq.com](mailto:techsupport@roboteq.com) for help upgrading it.
+Please note, that if you are using a beta version of firmware, the most recent release of the control utility may still be incompatible. Please email [techsupport@roboteq.com](mailto:techsupport@roboteq.com) for help upgrading it, or for any other continuing support for this FAQ.
 
 
 <!--START Email Footer -->
