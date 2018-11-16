@@ -10,7 +10,11 @@ FAQs are **NOT** meant to document a general feature of RoboteQ products. To Doc
 Format
 =============
 
+Faqs follow a strict format outline for their form:
 
+1. Start by briefly summing up the problem so that the user can identify with the issue they are having and verify that they are in the right place.
+2. Follow by providing a list of steps that the customer can take to fix their issue as quick as possible.
+3. End with a section for further trouble shooting steps. This can refer to an application note or tutorial, and should include a link to the RoboteQ techsupport mailing list.
 
 .. Links
 .. _Tutorial: ../Tutorials/Tutorial_ABOUT.rst
