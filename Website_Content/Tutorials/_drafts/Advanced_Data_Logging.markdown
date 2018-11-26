@@ -12,7 +12,6 @@ Monitoring the performance of a RoboteQ motor controller is essential to masteri
 
 Prerequisites
 ---------------
-If you are unfamiliar with how to log data from our Motor controller's using the *Run Tab* of Roborun+, please consult our [Data Logging Tutorial].
 
 This article also assumes that you are familiar with general RoboteQ terminology, including our operating modes (*Open Loop*, *Closed Loop*, etc.) and some of the internal interfaces for commanding values from our motor controller (*Motor Commands*, *Feedback Signal*, etc.). If you are not familiar with any of these terms in the context of RoboteQ products, please consult our [User Manual].
 
@@ -200,7 +199,7 @@ Once we have the data as a NumPy array, analysis becomes a breeze. For instance,
 
 <iframe src="assets/OpenLoopPlot.html" style="border:none;" height="800" width="100%"></iframe>
 
-The sky is the limit when it comes to manipulating the data behind our motor logs and gaining insight about the performance of the RoboteQ motor controller. If you can't perform some cool motor analysis using our data logging, drop [techsupport@roboteq.com](mailto:techsupport@roboteq.com) an email and let us know. 
+The sky is the limit when it comes to manipulating the data behind our motor logs and gaining insight about the performance of the RoboteQ motor controller. If you can't perform some cool motor analysis using our data logging, drop [techsupport@roboteq.com](mailto:techsupport@roboteq.com) an email and let us know.
 
 <!-- TODO Make this link a link to the data logging Tutorial -->
 [Data Logging Tutorial]:2018-11-08-using-run-tab-to-debug-data.markdown
